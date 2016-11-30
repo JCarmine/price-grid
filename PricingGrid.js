@@ -39,10 +39,12 @@ var stockLevels = [  [100, 110, 120, 52, 64]
     + " " + conditionPrices[columnIndex];
     
     for (t = 0; t < stockLevels[columnIndex].length; t++) {
-
       if (stockLevels[columnIndex][t] == colorValues[rowIndex]) {
+        li.className = "inStock";
         document.getElementById("main").appendChild(li);
-      } 
+      } else {
+        document.getElementById("main").appendChild(li);
+      }
     }
    
     columnIndex++;
