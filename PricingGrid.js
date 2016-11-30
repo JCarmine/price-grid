@@ -18,18 +18,19 @@ var excellentStock = [110, 120, 90];
 (function(){
 	var numberOfItems = conditionNames.length * colorNames.length;
   var columnCount = conditionNames.length;
+  var columnIndex = 0;
   
   for (i = 0; i < numberOfItems; i++) {
-  	
+  	alert(columnIndex);
     var li = document.createElement("li");
-    li.innerHTML = conditionValues[columnCount];
+    li.innerHTML = conditionValues[columnIndex];
     document.getElementById("main").appendChild(li);
-    columnCount++;
+    columnIndex++;
     
-    if (columnCount >= 3) {
-    	columnCount = 0;
+    if (columnIndex === columnCount) {
+    	columnIndex = 0;
     }
-    alert(columnCount);
+
 	}
  
 })();
