@@ -23,7 +23,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
                     ,[100, 110, 120, 52, 64, 77, 90]
                     ,[110, 120, 90]
                   ];
-alert(stockLevels[0].length);
+
 (function(){
 	var numberOfItems = conditionNames.length * colorNames.length;
   var columnCount = conditionNames.length;
@@ -34,12 +34,17 @@ alert(stockLevels[0].length);
   for (i = 0; i < numberOfItems; i++) {
 
     var li = document.createElement("li");
+
     li.innerHTML = conditionValues[columnIndex] + " " + colorValues[rowIndex] 
     + " " + conditionPrices[columnIndex];
     
+    for (t = 0; t < stockLevels[columnIndex].length; t++) {
+
+      if (stockLevels[columnIndex][t] == colorValues[rowIndex]) {
+        document.getElementById("main").appendChild(li);
+      } 
+    }
    
-   
-    document.getElementById("main").appendChild(li);
     columnIndex++;
     
     if (columnIndex == columnCount) {
