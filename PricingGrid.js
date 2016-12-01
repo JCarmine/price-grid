@@ -1,5 +1,3 @@
-
-
 <body>
 <ul id="main"></ul>
 </body>
