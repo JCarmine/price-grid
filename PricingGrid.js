@@ -6,9 +6,35 @@
   width: 100%;
 }
 
-li {
+#priceGridHeader {
+  width: 100%;
+}
+
+.priceGridHeaderItem {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+}
+
+#priceGridColorColumn {
+  width: 25%;
+  display: inline-block;
+}
+
+#priceGridBody {
+  width: 75%;
+  display: inline-block;
+}
+
+.priceGridItem {
   display: inline-block;
   width: 33%;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.inStock {
+  opacity: 1;
 }
 
 
@@ -31,7 +57,6 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   var rowCount = colorNames.length;
   var rowIndex = 0;
   
-  
   // Build the header
   var gridHeader = conditionNames;
   gridHeader.unshift("");
@@ -41,11 +66,25 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   
   for (i = 0; i < gridHeader.length; i++) { 
     var headerDivItem = document.createElement("div");
+    headerDivItem.className = "priceGridHeaderItem";
     headerDivItem.innerHTML = gridHeader[i];
     headerDiv.appendChild(headerDivItem);
   }
   
   document.getElementById("main").appendChild(headerDiv);
+  
+  
+  // Build the color column
+  var colorDiv = document.createElement("div");
+  colorDiv.id = "priceGridColorColumn";
+  
+  for (i = 0; i < colorNames.length; i++) { 
+    var colorDivItem = document.createElement("div");
+    colorDivItem.innerHTML = colorNames[i];
+    colorDiv.appendChild(colorDivItem);
+  }
+  
+  document.getElementById("main").appendChild(colorDiv);
   
   
   
@@ -78,4 +117,4 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   }
   
   document.getElementById("main").appendChild(bodyDiv);
-})();
+})(); 
