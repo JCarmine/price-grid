@@ -31,21 +31,39 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   var rowCount = colorNames.length;
   var rowIndex = 0;
   
+  
+  
+  var headerDiv = document.createElement("div");
+  headerDiv.id = "priceGridHeader";
+  document.getElementById("main").appendChild(headerDiv);
+  
+  var gridHeader = conditionNames;
+  gridHeader.unshift("");
+  
+  for (i = 0; i < gridHeader.length; i++) { 
+    var headerDivItem = document.createElement("div");
+    headerDivItem.innerHTML = gridHeader[i];
+    document.getElementById("priceGridHeader").appendChild(headerDivItem);
+  }
+  
+  
+  
+
   for (i = 0; i < numberOfItems; i++) {
 
-    var li = document.createElement("li");
+    var priceGridItem = document.createElement("li");
 
-    li.className = "priceGridItem";
-    li.innerHTML = "$" + conditionPrices[columnIndex];
-    li.setAttribute('data-reference', conditionValues[columnIndex] + "," + colorValues[rowIndex]);
+    priceGridItem.className = "priceGridItem";
+    priceGridItem.innerHTML = "$" + conditionPrices[columnIndex];
+    priceGridItem.setAttribute('data-reference', conditionValues[columnIndex] + "," + colorValues[rowIndex]);
     
     for (t = 0; t < stockLevels[columnIndex].length; t++) {
       if (stockLevels[columnIndex][t] == colorValues[rowIndex]) {
-        li.className += " inStock";
+        priceGridItem.className += " inStock";
       }
     }
     
-    document.getElementById("main").appendChild(li);
+    document.getElementById("main").appendChild(priceGridItem);
    
     columnIndex++;
     
