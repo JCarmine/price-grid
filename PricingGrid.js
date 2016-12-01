@@ -80,6 +80,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   
   for (i = 0; i < colorNames.length; i++) { 
     var colorDivItem = document.createElement("div");
+    colorDivItem.className = "priceGridColorItem " + colorNames[i];
     colorDivItem.innerHTML = colorNames[i];
     colorDiv.appendChild(colorDivItem);
   }
