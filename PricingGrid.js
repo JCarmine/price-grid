@@ -34,8 +34,8 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   for (i = 0; i < numberOfItems; i++) {
 
     var li = document.createElement("li");
-    li.className = "priceGridItem";
 
+    li.className = "priceGridItem";
     li.innerHTML = "$" + conditionPrices[columnIndex];
     li.setAttribute('data-reference', conditionValues[columnIndex] + "," + colorValues[rowIndex]);
     
@@ -55,5 +55,4 @@ var stockLevels = [  [100, 110, 120, 52, 64]
     }
    
   }
- 
 })();
