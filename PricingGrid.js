@@ -25,7 +25,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
                   ];
 
 (function(){
-	var numberOfItems = conditionNames.length * colorNames.length;
+  var numberOfItems = conditionNames.length * colorNames.length;
   var columnCount = conditionNames.length;
   var columnIndex = 0;
   var rowCount = colorNames.length;
@@ -34,14 +34,14 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   for (i = 0; i < numberOfItems; i++) {
 
     var li = document.createElement("li");
+    li.className = "priceGridItem";
 
     li.innerHTML = "$" + conditionPrices[columnIndex];
-    
-    // conditionValues[columnIndex] + " " + colorValues[rowIndex] + " " + 
+    li.setAttribute('data-reference', conditionValues[columnIndex] + "," + colorValues[rowIndex]);
     
     for (t = 0; t < stockLevels[columnIndex].length; t++) {
       if (stockLevels[columnIndex][t] == colorValues[rowIndex]) {
-        li.className = "inStock";
+        li.className += " inStock";
       }
     }
     
@@ -54,6 +54,6 @@ var stockLevels = [  [100, 110, 120, 52, 64]
       columnIndex = 0;
     }
    
-	}
+  }
  
 })();
