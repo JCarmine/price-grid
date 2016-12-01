@@ -51,12 +51,20 @@ var stockLevels = [  [100, 110, 120, 52, 64]
                   ];
 
 (function(){
+
+  // Set the row, column, and item counts
   var numberOfItems = conditionNames.length * colorNames.length;
   var columnCount = conditionNames.length;
   var columnIndex = 0;
   var rowCount = colorNames.length;
   var rowIndex = 0;
   
+
+  // Create the PriceGrid element
+  var priceGridDiv = document.createElement("div");
+  priceGridDiv.className = "priceGrid";
+  
+
   // Build the header
   var gridHeader = conditionNames;
   gridHeader.unshift("");
@@ -71,7 +79,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
     headerDiv.appendChild(headerDivItem);
   }
   
-  document.getElementById("main").appendChild(headerDiv);
+  priceGridDiv.appendChild(headerDiv);
   
   
   // Build the color column
@@ -85,7 +93,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
     colorDiv.appendChild(colorDivItem);
   }
   
-  document.getElementById("main").appendChild(colorDiv);
+  priceGridDiv.appendChild(colorDiv);
   
   
   
@@ -117,5 +125,8 @@ var stockLevels = [  [100, 110, 120, 52, 64]
     }
   }
   
-  document.getElementById("main").appendChild(bodyDiv);
+  priceGridDiv.appendChild(bodyDiv);
+  
+  // Write the PriceGrid element to the DOM
+  document.getElementById("main").appendChild(priceGridDiv);
 })(); 
