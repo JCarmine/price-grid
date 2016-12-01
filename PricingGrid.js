@@ -32,26 +32,30 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   var rowIndex = 0;
   
   
+  // Build the header
+  var gridHeader = conditionNames;
+  gridHeader.unshift("");
   
   var headerDiv = document.createElement("div");
   headerDiv.id = "priceGridHeader";
-  document.getElementById("main").appendChild(headerDiv);
-  
-  var gridHeader = conditionNames;
-  gridHeader.unshift("");
   
   for (i = 0; i < gridHeader.length; i++) { 
     var headerDivItem = document.createElement("div");
     headerDivItem.innerHTML = gridHeader[i];
-    document.getElementById("priceGridHeader").appendChild(headerDivItem);
+    headerDiv.appendChild(headerDivItem);
   }
   
+  document.getElementById("main").appendChild(headerDiv);
   
   
-
+  
+  // Build the grid
+  var bodyDiv = document.createElement("div");
+  bodyDiv.id = "priceGridBody";
+  
   for (i = 0; i < numberOfItems; i++) {
 
-    var priceGridItem = document.createElement("li");
+    var priceGridItem = document.createElement("div");
 
     priceGridItem.className = "priceGridItem";
     priceGridItem.innerHTML = "$" + conditionPrices[columnIndex];
@@ -63,14 +67,15 @@ var stockLevels = [  [100, 110, 120, 52, 64]
       }
     }
     
-    document.getElementById("main").appendChild(priceGridItem);
-   
+    bodyDiv.appendChild(priceGridItem);
+    
     columnIndex++;
     
     if (columnIndex == columnCount) {
       rowIndex++;
       columnIndex = 0;
     }
-   
   }
+  
+  document.getElementById("main").appendChild(bodyDiv);
 })();
