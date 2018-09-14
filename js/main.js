@@ -11,7 +11,6 @@ var stockLevels = [  [100, 110, 120, 52, 64]
                   ];
 
 // Set the row, column, and item counts
-var numberOfItems = conditionNames.length * colorNames.length;
 var columnCount = conditionNames.length;
 var columnIndex = 0;
 var rowCount = colorNames.length;
@@ -26,11 +25,12 @@ var rowIndex = 0;
   buildGridBody(priceGridContainer);
 
   document.getElementById("main").appendChild(priceGridContainer);
+
 })();
 
 // Build the header
 function buildHeader(priceGridContainer) {
-  var gridHeader = conditionNames;
+  var gridHeader = conditionNames.slice();
   gridHeader.unshift("");
 
   var headerDiv = document.createElement("div");
@@ -65,8 +65,9 @@ function buildColorColumn(priceGridContainer) {
 
 // Build the grid
 function buildGridBody(priceGridContainer) {
-  console.log("ruggg")
+  var numberOfItems = conditionNames.length * colorNames.length;
   var bodyDiv = document.createElement("div");
+
   bodyDiv.id = "priceGridBody";
 
   for (i = 0; i < numberOfItems; i++) {
