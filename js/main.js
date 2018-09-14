@@ -1,14 +1,21 @@
-var conditionNames  = ["fair", "good", "excellent"];
-var conditionValues = [100, 110, 120];
-var conditionPrices = [222, 555, 777];
+var product = {
+  conditionNames: ["fair", "good", "excellent"],
+  conditionValues: [100, 110, 120],
+  conditionPrices: [222, 555, 777],
+  colorNames: ["black", "white", "purple", "blue"],
+  colorValues: [52, 64, 77, 90],
+  stockLevels:[[100, 110, 120, 52, 64],
+               [100, 110, 120, 52, 64, 77, 90],
+               [110, 120, 90]
+              ]
+};
 
-var colorNames  = ["black", "white", "purple", "blue"];
-var colorValues = [52, 64, 77, 90];
-
-var stockLevels = [  [100, 110, 120, 52, 64]
-                    ,[100, 110, 120, 52, 64, 77, 90]
-                    ,[110, 120, 90]
-                  ];
+var conditionNames = product.conditionNames;
+var conditionValues = product.conditionValues;
+var conditionPrices = product.conditionPrices;
+var colorNames = product.colorNames;
+var colorValues = product.colorValues;
+var stockLevels = product.stockLevels;
 
 // Self-executing function to kick-off the build
 (function buildGrid() {
@@ -20,7 +27,6 @@ var stockLevels = [  [100, 110, 120, 52, 64]
   buildGridBody(priceGridContainer);
 
   document.getElementById("main").appendChild(priceGridContainer);
-
 })();
 
 // Build the header
