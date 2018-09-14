@@ -10,12 +10,7 @@ var stockLevels = [  [100, 110, 120, 52, 64]
                     ,[110, 120, 90]
                   ];
 
-// Set the row, column, and item counts
-var columnCount = conditionNames.length;
-var columnIndex = 0;
-var rowCount = colorNames.length;
-var rowIndex = 0;
-
+// Self-executing function to kick-off the build
 (function buildGrid() {
   var priceGridContainer = document.createElement("div");
   priceGridContainer.className = "priceGrid";
@@ -66,6 +61,10 @@ function buildColorColumn(priceGridContainer) {
 // Build the grid
 function buildGridBody(priceGridContainer) {
   var numberOfItems = conditionNames.length * colorNames.length;
+  var columnCount = conditionNames.length;
+  var columnIndex = 0;
+  var rowCount = colorNames.length;
+  var rowIndex = 0;
   var bodyDiv = document.createElement("div");
 
   bodyDiv.id = "priceGridBody";
