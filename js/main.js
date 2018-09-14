@@ -20,7 +20,10 @@ var rowIndex = 0;
 (function buildGrid() {
   var priceGridContainer = document.createElement("div");
   priceGridContainer.className = "priceGrid";
+
   buildHeader(priceGridContainer);
+  buildColorColumn(priceGridContainer);
+  buildGridBody(priceGridContainer);
 
   document.getElementById("main").appendChild(priceGridContainer);
 })();
@@ -41,9 +44,8 @@ function buildHeader(priceGridContainer) {
   }
 
   priceGridContainer.appendChild(headerDiv);
-  buildColorColumn(priceGridContainer);
+  return priceGridContainer;
 }
-
 
 // Build the color column
 function buildColorColumn(priceGridContainer) {
@@ -58,11 +60,12 @@ function buildColorColumn(priceGridContainer) {
   }
 
   priceGridContainer.appendChild(colorDiv);
-  buildGridBody(priceGridContainer);
+  return priceGridContainer;
 }
 
 // Build the grid
 function buildGridBody(priceGridContainer) {
+  console.log("ruggg")
   var bodyDiv = document.createElement("div");
   bodyDiv.id = "priceGridBody";
 
