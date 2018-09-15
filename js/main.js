@@ -26,9 +26,9 @@ var stockLevels = product.stockLevels;
   buildColorColumn(priceGridContainer);
   buildGridBody(priceGridContainer);
   document.getElementById('main').appendChild(priceGridContainer);
-})(); // Build the header
+})();
 
-
+// Build the header
 function buildHeader(priceGridContainer) {
   var gridHeader = conditionNames.slice();
   gridHeader.unshift('');
@@ -45,9 +45,9 @@ function buildHeader(priceGridContainer) {
 
   priceGridContainer.appendChild(headerDiv);
   return priceGridContainer;
-} // Build the color column
+}
 
-
+// Build the color column
 function buildColorColumn(priceGridContainer) {
   var colorDiv = document.createElement('div');
   colorDiv.id = 'priceGridColorColumn';
@@ -61,9 +61,9 @@ function buildColorColumn(priceGridContainer) {
 
   priceGridContainer.appendChild(colorDiv);
   return priceGridContainer;
-} // Build the grid
+}
 
-
+// Build the grid
 function buildGridBody(priceGridContainer) {
   var numberOfItems = conditionNames.length * colorNames.length;
   var columnCount = conditionNames.length;
