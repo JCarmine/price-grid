@@ -1,0 +1,31 @@
+{
+  "name": "price-grid",
+  "version": "1.0.0",
+  "description": "A demo price grid built using vanilla JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel js --out-dir css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCarmine/price-grid.git"
+  },
+  "author": "Jesse Carmine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCarmine/price-grid/issues"
+  },
+  "homepage": "https://github.com/JCarmine/price-grid#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-google": "^0.10.0",
+    "jsdoc": "^3.5.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}
